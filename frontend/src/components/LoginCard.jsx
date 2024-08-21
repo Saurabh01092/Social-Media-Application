@@ -80,7 +80,7 @@ export default function LoginCard() {
 							<FormLabel>Password</FormLabel>
 							<InputGroup>
 								<Input
-									type={"password"}
+									type={showPassword ? "text" : "password"}
 									onChange={(e) => setInputs({...inputs, password: e.target.value})}
 										value={inputs.password}
 								/>
