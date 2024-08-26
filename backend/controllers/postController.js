@@ -20,7 +20,7 @@ const createPost = async(req, res) => {
         const { postedBy, text } = req.body;
         let { img } = req.body;
 
-        if (!postedBy || !text) {
+        if (!postedBy || (!text && !img) ) {
             res.status(500).json({message: "postedBy and text fields are required"})
         }
 

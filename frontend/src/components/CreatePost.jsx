@@ -38,6 +38,13 @@ const CreatePost = () => {
 
     const handleCreatePost = async() => {
         setLoading(true);
+
+        if (!postText.trim() && !imgUrl) {
+            showToast("Error", "Post text cannot be empty", "error");
+            setLoading(false);
+            return;
+        }
+        
         try {
             const res = await fetch("/api/posts/create", {
                 method: "POST",
